@@ -28,6 +28,7 @@ Role Variables
 | aws_elb_cross_az_load_balancing| no | yes|yes, no | Distribute load across all configured Availability Zones | 
 | aws_elb_draining_timeout| no |20 | | Wait a specified timeout allowing connections to drain before terminating an instance| 
 | aws_resource_tags  | yes  |   | | a hash/dictionary of tags to add to the new instance or for starting/stopping instance by tag; '{"key":"value"}' and '{"VREnv":"PROD","VRProject":"sample","VRTeam":"infra", "Name":"instance_name"}' |
+| aws_wait_timeout | no | 600 | |  how long before wait gives up, in seconds | 
 | state |  no |  present |present, absent,running, stopped| create or terminate instances  |
 | region |  yes |   || The AWS region to use. Must be specified if ec2_url is not used. If not specified then the value of the EC2_REGION environment variable, if any, is used. See http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region  |
 | vivareal_project_build | yes | | | elb name |

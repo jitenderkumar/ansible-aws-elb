@@ -35,4 +35,4 @@
   set_fact: ec2_load_balancer="{{ aws_elb.elb.name }}"
 
 - name: set fact aws_elb_dns_name
-  set_fact: healthcheck_dns_name="{{ aws_elb.elb.dns_name }}"
+  set_fact: aws_elb_dns_name="{{ aws_elb.elb.dns_name }}"
