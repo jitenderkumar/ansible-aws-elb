@@ -1,4 +1,4 @@
-AWS ec2 provision
+AWS create/destroy ELB
 =========
 
 Manage AWS ELB.
