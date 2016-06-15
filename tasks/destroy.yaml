@@ -1,0 +1,7 @@
+---
+# tasks file for aws-elb
+- name: destroy elb
+  ec2_elb_lb:
+    name: "{{ vivareal_project_build }}"
+    state: "{{ state }}"
+    region: "{{ region }}"
