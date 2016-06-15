@@ -1,4 +1,4 @@
-AWS create/destroy ELB
+AWS create/destroy ELB [![CircleCI](https://circleci.com/gh/VivaReal/ansible-aws-elb/tree/master.svg?style=svg&circle-token=b1470d6ba30e2cf1090d12dcabe5616ac822d9dc)](https://circleci.com/gh/VivaReal/ansible-aws-elb/tree/master)
 =========
 
 Manage AWS ELB.
