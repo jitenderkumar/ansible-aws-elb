@@ -14,9 +14,9 @@
       ping_port: "{{ aws_elb_ping_port | default('80') }}"
       ping_path: "{{ aws_elb_ping_path | default('/') }}"
       response_timeout: "{{ aws_elb_healthcheck_response_timeout | default(5) }}"
-      interval: "{{ aws_elb_healthcheck_interval | default(30) }}"
-      unhealthy_threshold: "{{ aws_elb_unhealthy_threshold | default(2) }}"
-      healthy_threshold: "{{ aws_elb_healthy_threshold | default (5) }}"
+      interval: "{{ aws_elb_healthcheck_interval | default(10) }}"
+      unhealthy_threshold: "{{ aws_elb_unhealthy_threshold | default(5) }}"
+      healthy_threshold: "{{ aws_elb_healthy_threshold | default (3) }}"
     cross_az_load_balancing: "{{ aws_elb_cross_az_load_balancing | default('yes') }}"
     connection_draining_timeout: "{{ aws_elb_draining_timeout | default(20) }}"
   register: aws_elb
