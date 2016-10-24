@@ -33,3 +33,4 @@
 
 - name: set fact aws_elb_dns_name
   set_fact: aws_elb_dns_name="{{ aws_elb.elb.dns_name }}"
+  
