@@ -26,7 +26,7 @@
 #https://github.com/ansible/ansible-modules-core/issues/439
 - name: tag ELB
   shell: "aws --region {{ region }} elb add-tags --load-balancer-names {{aws_elb.elb.name}} --tags Key=Name,Value={{ aws_resource_tags.Name }}
-   Key=VRTeam,Value={{aws_resource_tags.VRTeam}} Key=VREnv,Value={{aws_resource_tags.VREnv}} Key=VRProject,Value={{aws_resource_tags.VRProject}}"
+   Key=App,Value={{aws_resource_tags.App}} Key=Env,Value={{aws_resource_tags.Env}} Key=Product,Value={{aws_resource_tags.Product}}"
 
 - name: set fact ec2_load_balancer
   set_fact: ec2_load_balancer="{{ aws_elb.elb.name }}"
