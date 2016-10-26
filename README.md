@@ -27,7 +27,7 @@ Role Variables
 | aws_elb_healthy_threshold | | no | 3| The number of consecutive successful health checks that must occur before declaring an EC2 instance healthy.|
 | aws_elb_cross_az_load_balancing| no | yes|yes, no | Distribute load across all configured Availability Zones |
 | aws_elb_draining_timeout| no |20 | | Wait a specified timeout allowing connections to drain before terminating an instance|
-| aws_resource_tags  | yes  |   | | a hash/dictionary of tags to add to the new instance or for starting/stopping instance by tag; '{"key":"value"}' and '{"Env":"prod","App":"sample","Product":"platfom", "Name":"instance_name"}' |
+| aws_resource_tags  | yes  |   | | a hash/dictionary of tags to add to the new instance or for starting/stopping instance by tag; '{"key":"value"}' and '{"Env":"prod","Product":"platform","App":"sample", "Name":"instance_name"}' |
 | aws_wait_timeout | no | 600 | |  how long before wait gives up, in seconds |
 | state |  no |  present |present, absent| create or destroy elb  |
 | region |  yes |   || The AWS region to use. Must be specified if ec2_url is not used. If not specified then the value of the EC2_REGION environment variable, if any, is used. See http://docs.aws.amazon.com/general/latest/gr/rande.html#ec2_region  |
@@ -53,8 +53,8 @@ Example Playbook
         aws_resource_tags: {
          'Name': 'my-elb-name',
          'Env': 'prod',
-         'App': 'infra-ansible',
-         'Product': 'infra'}
+         'Product': 'platform',
+         'App': 'infra-ansible'}
         region: us-east-1
         aws_elb_instance_listeners: [{protocol: 'http',load_balancer_port: '80',instance_protocol: 'http',instance_port: '80'}]
         aws_elb_subnets: ['subnet-0959b37f']
