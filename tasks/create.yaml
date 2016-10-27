@@ -2,7 +2,7 @@
 # tasks file for aws-elb
 - name: create elb
   ec2_elb_lb:
-    name: "{{ vivareal_project_build }}"
+    name: "{{ aws_resource_tags.Env }}-{{ aws_resource_tags.Product }}-{{ aws_resource_tags.App }}-{{ aws_resource_tags.Process }}"
     subnets: "{{ aws_elb_subnets }}"
     scheme: "{{ aws_elb_scheme | default('internet-facing') }}"
     state: "{{ state | default('present') }}"
@@ -26,11 +26,10 @@
 #https://github.com/ansible/ansible-modules-core/issues/439
 - name: tag ELB
   shell: "aws --region {{ region }} elb add-tags --load-balancer-names {{aws_elb.elb.name}} --tags Key=Name,Value={{ aws_resource_tags.Name }}
-   Key=App,Value={{aws_resource_tags.App}} Key=Env,Value={{aws_resource_tags.Env}} Key=Product,Value={{aws_resource_tags.Product}}"
+   Key=App,Value={{aws_resource_tags.Env}} Key=Env,Value={{aws_resource_tags.Prodcut}} Key=Product,Value={{aws_resource_tags.App}} Key=Process,Value={{aws_resource_tags.Process}}"
 
 - name: set fact ec2_load_balancer
   set_fact: ec2_load_balancer="{{ aws_elb.elb.name }}"
 
 - name: set fact aws_elb_dns_name
   set_fact: aws_elb_dns_name="{{ aws_elb.elb.dns_name }}"
-  
