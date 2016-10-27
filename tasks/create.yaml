@@ -2,7 +2,7 @@
 # tasks file for aws-elb
 - name: create elb
   ec2_elb_lb:
-    name: "{{ aws_resource_tags.Env }}-{{ aws_resource_tags.Product }}-{{ aws_resource_tags.App }}-{{ aws_resource_tags.Process }}"
+    name: "{{ vivareal_project_build }}"
     subnets: "{{ aws_elb_subnets }}"
     scheme: "{{ aws_elb_scheme | default('internet-facing') }}"
     state: "{{ state | default('present') }}"
