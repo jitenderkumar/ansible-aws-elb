@@ -2,6 +2,6 @@
 # tasks file for aws-elb
 - name: destroy elb
   ec2_elb_lb:
-    name: "{{ aws_resource_tags.Env }}-{{ aws_resource_tags.Product }}-{{ aws_resource_tags.App }}-{{ aws_resource_tags.Process }}"
+    name: "{{ vivareal_project_build }}"
     state: "{{ state }}"
     region: "{{ region }}"
