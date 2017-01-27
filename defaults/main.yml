@@ -14,6 +14,6 @@ aws_elb_instance_listeners: [
     load_balancer_port: '443',
     instance_protocol: 'http',
     instance_port: '80',
-    ssl_certificate_id: 'arn:aws:iam::444914307613:server-certificate/2015-2018-wildcard.vivareal.com.br'
+    ssl_certificate_id: 'arn:aws:iam::444914307613:server-certificate/2015-2018-wildcard.vivareal.com.br_withall'
   }
 ]
